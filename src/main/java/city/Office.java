@@ -2,7 +2,7 @@ package city;
 
 public class Office extends Building{
     private String company;
-    private int numberOfTablesPerFloor;
+    private int numberOfTablesPerLevel;
 
     public Office(int area, int levels, Address address, String company, int numberOfTablesPerFloor) {
         super(area, levels, address);
@@ -10,19 +10,19 @@ public class Office extends Building{
             throw new IllegalArgumentException("Invalid table number!");
         }
         this.company = company;
-        this.numberOfTablesPerFloor = numberOfTablesPerFloor;
+        this.numberOfTablesPerLevel = numberOfTablesPerFloor;
     }
 
     public String getCompany() {
         return company;
     }
 
-    public int getNumberOfTablesPerFloor() {
-        return numberOfTablesPerFloor;
+    public int getNumberOfTablesPerLevel() {
+        return numberOfTablesPerLevel;
     }
 
     @Override
     public int calculateNumberOfPeopleCanFit() {
-        return (getLevels()-1)*getNumberOfTablesPerFloor();
+        return (getLevels()-1)*getNumberOfTablesPerLevel();
     }
 }
